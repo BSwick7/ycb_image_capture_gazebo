@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Gazebo specific options -->
+  <arg name="gazebo_gui" default="true" />
+  <arg name="paused" default="false" />
+  <arg name="world_name" default="$(find ycb_image_capture_gazebo)/worlds/pick_table.world" />
+  
+  <!-- launch the gazebo simulator and spawn the robot -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="gui" value="$(arg gazebo_gui)" />
+    <arg name="world_name" value="$(arg world_name)" />
+  </include>
+</launch>
