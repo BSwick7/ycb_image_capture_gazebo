@@ -1,3 +1,2 @@
 config/ycb_object_dimensions/*
-meshes/*
-models/*
+models/ycb/*
