@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Add camera name argument that user sets in command line -->
+    <arg name="camera_name" default="d435"/>
+    <arg name="camera_location" default="position1"/>
+
+    <!-- Load the rosparams from a yaml file -->
+    <group ns="spawn_d435_gazebo">
+        <rosparam command="load" file="$(find ycb_image_capture_gazebo)/config/$(arg camera_name)_$(arg camera_location).yaml"/>
+    </group>
+
+    <!-- Launch spawn_objects_on_pick_table.py script in a ros node  -->
+    <node name="spawn_d435_gazebo" pkg="ycb_image_capture_gazebo" type="spawn_d435_gazebo.py" output="screen">
+        <param name="camera_name" value="$(arg camera_name)" />
+    </node>
+
+
+</launch>

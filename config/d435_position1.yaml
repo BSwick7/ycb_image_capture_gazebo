@@ -1,0 +1,9 @@
+camera_position:
+  - -0.7
+  - 0.0
+  - 2.15
+
+camera_rpy:
+  - 0.0
+  - deg(66)
+  - 0.0
