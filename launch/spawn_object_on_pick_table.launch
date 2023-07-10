@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Add object name argument that user sets in command line -->
+    <arg name="object_name" default="chips_can"/>
+
+    <!-- Launch spawn_objects_on_pick_table.py script in a ros node  -->
+    <node name="spawn_object_on_pick_table" pkg="ycb_image_capture_gazebo" type="spawn_object_on_pick_table.py" output="screen">
+        <!-- Add object name rosparam to node and let user specify with command line argument-->
+        <param name="object_name" value="$(arg object_name)" />
+    </node>
+
+
+</launch>
